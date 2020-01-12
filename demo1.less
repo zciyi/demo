@@ -1,0 +1,342 @@
+
+
+.flex(){
+    display:-webkit-box;
+    display:-moz-box;
+    // display:box;
+    display:-webkit-flexbox;
+    display:-moz-flexbox;
+    display:flexbox;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:flex;
+}
+
+.ver(){
+    -webkit-box-align:center;
+    -moz-box-align:center;
+    box-align:center;
+    -webkit-flex-align:center;
+    -moz-flex-align:center;
+    flex-align:center;
+    -webkit-align-items:center;
+    -moz-align-items:center;
+    align-items:center;
+}
+
+.flex(@n){
+    -webkit-flex:@n;
+    -moz-flex:@n;
+    flex:@n;
+    -webkit-flexbox:@n;
+    -moz-flexbox:@n;
+    flexbox:@n;
+    -webkit-box:@n;
+    -moz-box:@n;
+    box:@n;
+}
+
+.center{
+    -webkit-justify-content:center;
+    -moz-justify-content:center;
+    justify-content:center;
+    -webkit-flex-pack:center;
+    -moz-flex-pack:center;
+    flex-pacbox-pack:center;
+    -moz-box-pack:center;
+    box-pack:center;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #F4F4F4;
+}
+
+.P-comment {
+    font-size: 12/14rem;
+    &Info{
+        position: relative;
+        padding: .5rem 1rem;
+        border-bottom: 1px solid #D8D4E2;
+        &Icon {
+            width: 60/14rem;
+            height: 45/14rem;
+            background: #9B9DDE;
+            position: absolute;
+            margin-right: 1rem;
+            border-radius:.4rem; 
+            text-align: center;
+            .tagmusic{
+                position: absolute;
+                background: #EA3B7B;
+                color: #fff;
+                border-radius:2rem; 
+                font-size: 9/14rem;
+                padding: 1.4px 1px;
+                min-width: 1rem;
+                text-align: center;
+                left: -.3rem;
+                top: -.3rem;
+            }
+            .iconmusic{
+                padding-top: 6/14rem;
+            }
+            .timemusic{
+                color: #fff;
+                font-size: 11/14rem;
+                line-height: 1;
+            }
+
+        }
+        &Con{
+            padding-left: 70/14rem;
+            padding-right: 30/14rem;
+            .desmusic{
+                font-size: 11/14rem;
+                color: #C3C3C3;
+                margin: .2rem 0;
+            }
+            .infomusic{
+                font-size: 10/14rem;
+                color: #C3C3C3;
+            }
+        }
+        &Title{
+            .typemusic{
+                background: #FFB73C;
+                font-size: 9/14rem;
+                color: #fff;
+                padding: 0.1rem .5rem;
+                margin-right: .5rem;
+                border-radius:.2rem; 
+            }
+           
+        }
+        &Like{
+            position: absolute;
+            right: 1rem;
+            bottom: .2rem;
+            width: 20/14rem;
+            height: 20/14rem;
+            background: url("https://img.icons8.com/material-outlined/00000/filled-like.png") no-repeat ;
+            background-size:contain;
+        }
+    }
+    &Music{
+        background: #EBE8F8;
+        min-height: 50/14rem;
+       
+    }
+    &Audio{
+        .flex;
+        padding:.6rem .8rem;
+        .audioBtn{
+            .playOrPause{
+                width: 30/14rem;
+                height: 30/14rem;
+                display: inline-block;
+                &.iconPlay{
+                    background: url("https://img.icons8.com/ios-glyphs/30/000000/play-button-circled.png") no-repeat ;
+                    background-size:contain; 
+                    
+                }
+                &.iconPause{
+                    background: red;
+                }
+            }
+        }
+        
+        .audioStatus{
+            width: 36/14rem;
+            height: 30/14rem;
+            background: #5A59A3;
+            border-radius:.2rem; 
+            .flex;
+            .ver;
+            .loading{
+                width: 36/14rem;
+                height: 20/14rem;
+                padding: 4/14rem;
+                box-sizing: border-box;
+                .flex;
+                justify-content: space-around;
+                
+            }
+            .loading span{
+                display: inline-block;
+                width:2px;
+                height: 100%;
+                border-radius: .2rem;
+                background: #fff;
+               
+            }
+            .loadingStart span{
+                -webkit-animation: load 1s ease infinite;
+            }
+            @-webkit-keyframes load{
+                0%,100%{
+                    height:100%;
+                    background: #fff;
+                }
+                50%{
+                    height: 50%;
+                    margin: 4/14rem 0;
+                    background: #fff;
+                }
+            }
+            .loading span:nth-child(1){
+                height: 70%;
+                margin: 2/14rem 0;
+            }
+            .loading span:nth-child(2){
+                height: 80%;
+                margin: 1/14rem 0;
+                -webkit-animation-delay:0.2s;
+            }
+            .loading span:nth-child(3){
+                -webkit-animation-delay:0.4s;
+            }
+            .loading span:nth-child(4){
+                height: 80%;
+                margin: 1/14rem 0;
+                -webkit-animation-delay:0.6s;
+            }
+            .loading span:nth-child(5){
+                height: 70%;
+                margin: 2/14rem 0;
+                -webkit-animation-delay:0.8s;
+            }
+
+        }
+        .audioMain{
+            .flex;
+            .flex(1);
+            .ver;
+            padding: 0 .6rem;
+            .progress{
+                position: relative;
+                background: #BFC0E5;
+                height: 2px;
+                line-height: 40/14rem;
+                .flex(1);
+                margin: 0 .2rem 0 .6rem;
+                &ing{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: #9B9DDE;
+                    height: 2px;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 6px;
+                        background: #5A59A3;
+                        height: 12px;
+                        top: -5px;
+                        right: 0;
+                        border-radius:2px; 
+                    }
+                }
+            }
+
+        }
+    }
+
+    &Main{
+        .titleCom{
+            line-height: 30/14rem;
+            border-bottom:1px solid #f8f8f8; 
+            background: #fff;
+            padding: 0 1rem;
+            font-size: 12/14rem;
+        }
+
+    }
+    &List{
+        padding: .8rem;
+        border-bottom:1px solid #f8f8f8;
+        background: #fff;
+    }
+    &User{
+        .flex;
+        .ver;
+        .userImg{
+            width: 24/14rem;
+            height: 24/14rem;
+            overflow: hidden;
+            border-radius:50%; 
+            img{
+                width: 100%;
+            }
+        }
+        >div{
+            display: inline-block;
+            margin-right: 8/14rem;
+        }
+        .timecomment{
+            color: #C3C3C3;
+        }
+    }
+    &Content{
+        padding-top: .4rem;
+    }
+    &Reply{
+        background: #F7F7F7;
+        margin-top: .4rem;
+        padding: .6rem .8rem;
+        .replycomment{
+            color: #A7C2F0;
+            padding-bottom:.4rem; 
+        }
+    }
+
+
+    &Ctrl{
+        padding: .8rem .6rem;
+        position: fixed;
+        height: 30/14rem;
+        background: #fff;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .flex;
+        >div{
+            height: 100%;
+
+        }
+        .tipctrl{
+            background: #9B9DDE;
+            border-radius: .2rem 0 0 .2rem;
+            color: #fff;
+            padding: .4rem .8rem;
+            box-sizing: border-box;
+            font-size: 12/14rem;
+        }
+        .inputctrl{
+            .flex(1);
+            box-sizing: border-box;
+           
+            input{
+                padding-left: .6rem;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border: 1px solid #DBDBDB;
+                border-radius: 0 .2rem .2rem 0;
+                &::-webkit-input-placeholder{
+                    color: #DBDBDB;
+                }
+            }
+            
+        }
+        .btnctrl{
+            padding: .4rem .8rem;
+            background: #9B9DDE;
+            border-radius: .2rem;
+            margin-left: .6rem;
+            color: #fff;
+            box-sizing: border-box;
+            font-size: 12/14rem;
+        }
+    }
+}

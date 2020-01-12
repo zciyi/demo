@@ -1,0 +1,372 @@
+.center {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-flex-pack: center;
+  -moz-flex-pack: center;
+  flex-pacbox-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #F4F4F4;
+}
+.P-comment {
+  font-size: 0.85714286rem;
+}
+.P-commentInfo {
+  position: relative;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid #D8D4E2;
+}
+.P-commentInfoIcon {
+  width: 4.28571429rem;
+  height: 3.21428571rem;
+  background: #9B9DDE;
+  position: absolute;
+  margin-right: 1rem;
+  border-radius: .4rem;
+  text-align: center;
+}
+.P-commentInfoIcon .tagmusic {
+  position: absolute;
+  background: #EA3B7B;
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 0.64285714rem;
+  padding: 1.4px 1px;
+  min-width: 1rem;
+  text-align: center;
+  left: -0.3rem;
+  top: -0.3rem;
+}
+.P-commentInfoIcon .iconmusic {
+  padding-top: 0.42857143rem;
+}
+.P-commentInfoIcon .timemusic {
+  color: #fff;
+  font-size: 0.78571429rem;
+  line-height: 1;
+}
+.P-commentInfoCon {
+  padding-left: 5rem;
+  padding-right: 2.14285714rem;
+}
+.P-commentInfoCon .desmusic {
+  font-size: 0.78571429rem;
+  color: #C3C3C3;
+  margin: .2rem 0;
+}
+.P-commentInfoCon .infomusic {
+  font-size: 0.71428571rem;
+  color: #C3C3C3;
+}
+.P-commentInfoTitle .typemusic {
+  background: #FFB73C;
+  font-size: 0.64285714rem;
+  color: #fff;
+  padding: 0.1rem .5rem;
+  margin-right: .5rem;
+  border-radius: .2rem;
+}
+.P-commentInfoLike {
+  position: absolute;
+  right: 1rem;
+  bottom: .2rem;
+  width: 1.42857143rem;
+  height: 1.42857143rem;
+  background: url("https://img.icons8.com/material-outlined/00000/filled-like.png") no-repeat;
+  background-size: contain;
+}
+.P-commentMusic {
+  background: #EBE8F8;
+  min-height: 3.57142857rem;
+}
+.P-commentAudio {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  padding: .6rem .8rem;
+}
+.P-commentAudio .audioBtn .playOrPause {
+  width: 2.14285714rem;
+  height: 2.14285714rem;
+  display: inline-block;
+}
+.P-commentAudio .audioBtn .playOrPause.iconPlay {
+  background: url("https://img.icons8.com/ios-glyphs/30/000000/play-button-circled.png") no-repeat;
+  background-size: contain;
+}
+.P-commentAudio .audioBtn .playOrPause.iconPause {
+  background: red;
+}
+.P-commentAudio .audioStatus {
+  width: 2.57142857rem;
+  height: 2.14285714rem;
+  background: #5A59A3;
+  border-radius: .2rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-flex-align: center;
+  -moz-flex-align: center;
+  flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+.P-commentAudio .audioStatus .loading {
+  width: 2.57142857rem;
+  height: 1.42857143rem;
+  padding: 0.28571429rem;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  justify-content: space-around;
+}
+.P-commentAudio .audioStatus .loading span {
+  display: inline-block;
+  width: 2px;
+  height: 100%;
+  border-radius: .2rem;
+  background: #fff;
+}
+.P-commentAudio .audioStatus .loadingStart span {
+  -webkit-animation: load 1s ease infinite;
+}
+@-webkit-keyframes load {
+  0%,
+  100% {
+    height: 100%;
+    background: #fff;
+  }
+  50% {
+    height: 50%;
+    margin: 0.28571429rem 0;
+    background: #fff;
+  }
+}
+.P-commentAudio .audioStatus .loading span:nth-child(1) {
+  height: 70%;
+  margin: 0.14285714rem 0;
+}
+.P-commentAudio .audioStatus .loading span:nth-child(2) {
+  height: 80%;
+  margin: 0.07142857rem 0;
+  -webkit-animation-delay: 0.2s;
+}
+.P-commentAudio .audioStatus .loading span:nth-child(3) {
+  -webkit-animation-delay: 0.4s;
+}
+.P-commentAudio .audioStatus .loading span:nth-child(4) {
+  height: 80%;
+  margin: 0.07142857rem 0;
+  -webkit-animation-delay: 0.6s;
+}
+.P-commentAudio .audioStatus .loading span:nth-child(5) {
+  height: 70%;
+  margin: 0.14285714rem 0;
+  -webkit-animation-delay: 0.8s;
+}
+.P-commentAudio .audioMain {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+  -webkit-flexbox: 1;
+  -moz-flexbox: 1;
+  flexbox: 1;
+  -webkit-box: 1;
+  -moz-box: 1;
+  box: 1;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-flex-align: center;
+  -moz-flex-align: center;
+  flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  padding: 0 .6rem;
+}
+.P-commentAudio .audioMain .progress {
+  position: relative;
+  background: #BFC0E5;
+  height: 2px;
+  line-height: 2.85714286rem;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+  -webkit-flexbox: 1;
+  -moz-flexbox: 1;
+  flexbox: 1;
+  -webkit-box: 1;
+  -moz-box: 1;
+  box: 1;
+  margin: 0 .2rem 0 .6rem;
+}
+.P-commentAudio .audioMain .progressing {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #9B9DDE;
+  height: 2px;
+}
+.P-commentAudio .audioMain .progressing::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background: #5A59A3;
+  height: 12px;
+  top: -5px;
+  right: 0;
+  border-radius: 2px;
+}
+.P-commentMain .titleCom {
+  line-height: 2.14285714rem;
+  border-bottom: 1px solid #f8f8f8;
+  background: #fff;
+  padding: 0 1rem;
+  font-size: 0.85714286rem;
+}
+.P-commentList {
+  padding: .8rem;
+  border-bottom: 1px solid #f8f8f8;
+  background: #fff;
+}
+.P-commentUser {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-flex-align: center;
+  -moz-flex-align: center;
+  flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+.P-commentUser .userImg {
+  width: 1.71428571rem;
+  height: 1.71428571rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.P-commentUser .userImg img {
+  width: 100%;
+}
+.P-commentUser > div {
+  display: inline-block;
+  margin-right: 0.57142857rem;
+}
+.P-commentUser .timecomment {
+  color: #C3C3C3;
+}
+.P-commentContent {
+  padding-top: .4rem;
+}
+.P-commentReply {
+  background: #F7F7F7;
+  margin-top: .4rem;
+  padding: .6rem .8rem;
+}
+.P-commentReply .replycomment {
+  color: #A7C2F0;
+  padding-bottom: .4rem;
+}
+.P-commentCtrl {
+  padding: .8rem .6rem;
+  position: fixed;
+  height: 2.14285714rem;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+.P-commentCtrl > div {
+  height: 100%;
+}
+.P-commentCtrl .tipctrl {
+  background: #9B9DDE;
+  border-radius: .2rem 0 0 .2rem;
+  color: #fff;
+  padding: .4rem .8rem;
+  box-sizing: border-box;
+  font-size: 0.85714286rem;
+}
+.P-commentCtrl .inputctrl {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+  -webkit-flexbox: 1;
+  -moz-flexbox: 1;
+  flexbox: 1;
+  -webkit-box: 1;
+  -moz-box: 1;
+  box: 1;
+  box-sizing: border-box;
+}
+.P-commentCtrl .inputctrl input {
+  padding-left: .6rem;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #DBDBDB;
+  border-radius: 0 .2rem .2rem 0;
+}
+.P-commentCtrl .inputctrl input::-webkit-input-placeholder {
+  color: #DBDBDB;
+}
+.P-commentCtrl .btnctrl {
+  padding: .4rem .8rem;
+  background: #9B9DDE;
+  border-radius: .2rem;
+  margin-left: .6rem;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 0.85714286rem;
+}

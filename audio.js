@@ -6,6 +6,11 @@ function AudioM() {
     this.playTime = null;
     this.progressBg = null;
     this.loading = null;
+    this.status = ""
+    this.timesCount = null
+    this.timeEnd = false
+    this.count = 0
+
     this.initAudio = function(conf) {
         if (conf) {
             this.audio = document.getElementById(conf.id)
@@ -24,9 +29,6 @@ function AudioM() {
             })
             this.audio.addEventListener('ended', this.audioEnded.bind(me), false);
             this.progressBg.addEventListener("click", function(e) {
-                console.log(e.clientX)
-                console.log(this.offsetLeft)
-                console.log(this.offsetWidth)
                 var rate = ((e.clientX - this.offsetLeft) / this.offsetWidth);
                 me.audio.currentTime = me.audio.duration * rate;
                 me.updateProgress();
@@ -36,12 +38,26 @@ function AudioM() {
     this.playOrPause = function() {
         let me = this
         if (me.audio.paused) {
+            if (!this.status || this.status === 'end') {
+                this.status = "start"
+            }
+            this.timeEnd = false
             me.audio.play();
             me.playPause.classList.remove("iconPlay")
             me.playPause.classList.add("iconPause")
             this.loading.classList.add("loadingStart")
 
         } else {
+            let cur = this.transTime(this.audio.currentTime, 1)
+            if ((cur.hour || cur.min || cur.sec > 2) && this.status === "start") {
+                this.count++;
+                console.log("播放次数", this.count)
+            }
+            this.timeEnd = true
+            this.status = "pause"
+            clearInterval(this.timesCount)
+            this.timesCount = null
+
             me.audio.pause();
             me.playPause.classList.remove("iconPause")
             me.playPause.classList.add("iconPlay")
@@ -50,31 +66,72 @@ function AudioM() {
             }
         }
     }
-    this.transTime = function(time) {
-        var duration = parseInt(time);
-        var minute = parseInt(duration / 60);
-        var sec = duration % 60 + '';
-        var isM0 = ':';
-        if (minute == 0) {
-            minute = '00';
-        } else if (minute < 10) {
-            minute = '0' + minute;
+    this.transTime = function(times, type) {
+        var t = "";
+        var hour, min, sec
+        if (times > -1) {
+            hour = Math.floor(times / 3600);
+            min = Math.floor(times / 60) % 60;
+            sec = Math.floor(times % 60);
+            if (hour < 10) {
+                t = '0' + hour + ":";
+            } else {
+                t = hour + ":";
+            }
+
+            if (min < 10) {
+                t += "0";
+            }
+            t += min + ":";
+            if (sec < 10) {
+                t += "0";
+            }
+            t += sec.toFixed(2);
         }
-        if (sec.length == 1) {
-            sec = '0' + sec;
+        t = t.substring(0, t.length - 3);
+        if (type) {
+            return {
+                hour: hour,
+                min: min,
+                sec: sec
+            }
+        } else {
+            return t;
         }
-        return minute + isM0 + sec
+
     }
     this.updateProgress = function() {
         var value = (this.audio.currentTime / this.audio.duration) * 100;
         this.progress.style.width = value + '%';
         this.playTime.innerText = this.transTime(this.audio.currentTime);
+        //每隔两秒统计一次
+        let me = this
+        if (!this.timesCount && !this.timeEnd) {
+            this.timesCount = setInterval(() => {
+                if (me.timeEnd) {
+                    clearInterval(me.timesCount)
+                    me.timesCount = null
+                } else {
+                    console.log(me.transTime(me.audio.currentTime))
+                }
+
+            }, 2000)
+        }
+
+
 
     }
     this.audioEnded = function() {
+        this.timesCount = null
+        clearInterval(this.timesCount)
+        this.timeEnd = true
+        this.status = "end"
         this.audio.currentTime = 0;
         this.audio.pause();
         this.playPause.classList.remove("iconPause")
         this.playPause.classList.add("iconPlay")
+        if (this.loading.className.indexOf("loadingStart") > -1) {
+            this.loading.classList.remove("loadingStart")
+        }
     }
 }

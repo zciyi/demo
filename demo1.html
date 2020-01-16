@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>评论</title>
-    <link rel="stylesheet" type="text/css" href="../demo1.less?__inline">
+    <link rel="stylesheet" type="text/css" href="../demo1.less">
     <script src="./audio.js"></script>
 </head>
 
@@ -104,7 +104,7 @@
             <div class="inputctrl"> <textarea rows=1 class="textauto" oninput="this.style.height=this.scrollHeight+'px'"></textarea></div>
             <div class="btnctrl">提交</div>
         </section>
-
+        <div class="P-commentTip" id="tipMsg">tip</div>
     </div>
     <script>
         let audioM = new AudioM();
@@ -117,6 +117,27 @@
             progressBg: "progressBg",
             loading: "loading"
         })
+        window.onunload = function() {
+            console.log(audioM.transTime(audioM.audio.currentTime))
+            debugger
+        }
+        let timetipMsg = null
+
+        function showTip(val, dur) {
+            if (timetipMsg) {
+                clearTimeout(timetipMsg)
+                timetipMsg = null
+            }
+            let tipMsg = document.getElementById("tipMsg")
+            tipMsg.innerText = val
+            tipMsg.style.display = "block";
+            timetipMsg = setTimeout(() => {
+                tipMsg.style.display = "none";
+                tipMsg.innerText = ""
+            }, dur || 3000)
+
+        }
+        // showTip("sfdsfds")
     </script>
 </body>
 

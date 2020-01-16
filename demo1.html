@@ -118,7 +118,9 @@
             loading: "loading"
         })
         window.onunload = function() {
-            console.log(audioM.transTime(audioM.audio.currentTime))
+            if (audioM.audio.paused && audioM.status) {
+                console.log(audioM.transTime(audioM.audio.currentTime))
+            }
             debugger
         }
         let timetipMsg = null

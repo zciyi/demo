@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../demo1.less?__inline">
     <script src="./audio.js"></script>
 </head>
+
 <body>
     <div class="P-comment">
         <section class="P-commentInfo">
@@ -18,8 +20,7 @@
             </div>
             <div class="P-commentInfoCon">
                 <div class="P-commentInfoTitle">
-                    <span class="typemusic">活动类型</span>
-                    2342424
+                    <span class="typemusic">活动类型</span> 2342424
                 </div>
                 <div class="desmusic">
                     我认识发送到发顺丰反倒是地方
@@ -33,16 +34,16 @@
         </section>
         <section class="P-commentMusic">
             <div class="P-commentAudio">
-                <audio id="audioTag" src="https://www.w3school.com.cn/i/song.ogg" ></audio>
+                <audio id="audioTag" src="https://www.w3school.com.cn/i/song.ogg"></audio>
                 <div class="audioStatus">
                     <div class="loading" id="loading">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    
+
                 </div>
                 <div class="audioMain">
                     <div id="playTime">00:00</div>
@@ -50,7 +51,7 @@
                         <div class="progressing" id="progress"></div>
                     </div>
                     <div id="audioTime">00:00</div>
-                   
+
                 </div>
                 <div class="audioBtn">
                     <span class="playOrPause iconPlay" id="playPause">
@@ -66,7 +67,7 @@
             <div class="P-commentList">
                 <div class="P-commentUser">
                     <div class="userImg">
-                        <img src="http://image.biaobaiju.com/uploads/20180803/23/1533308846-puvstXHjBc.jpg"/>
+                        <img src="http://image.biaobaiju.com/uploads/20180803/23/1533308846-puvstXHjBc.jpg" />
 
                     </div>
                     <div>用户</div>
@@ -81,41 +82,42 @@
                 </div> -->
             </div>
             <div class="P-commentList">
-                    <div class="P-commentUser">
-                        <div class="userImg">
-                            <img src="http://image.biaobaiju.com/uploads/20180803/23/1533308846-puvstXHjBc.jpg"/>
-    
-                        </div>
-                        <div>用户</div>
-                        <div class="timecomment">2019-12-10 19:10:10</div>
+                <div class="P-commentUser">
+                    <div class="userImg">
+                        <img src="http://image.biaobaiju.com/uploads/20180803/23/1533308846-puvstXHjBc.jpg" />
+
                     </div>
-                    <div class="P-commentContent">评论内容</div>
-                    <div class="P-commentReply">
-                        <div class="replycomment">回复</div>
-                        <div>
-                            回复内容
-                        </div>
+                    <div>用户</div>
+                    <div class="timecomment">2019-12-10 19:10:10</div>
+                </div>
+                <div class="P-commentContent">评论内容</div>
+                <div class="P-commentReply">
+                    <div class="replycomment">回复</div>
+                    <div>
+                        回复内容
                     </div>
                 </div>
+            </div>
         </section>
         <section class="P-commentCtrl">
             <div class="tipctrl">评论</div>
-            <div class="inputctrl"> <textarea rows=1 class="textauto"  
-                oninput="this.style.height=this.scrollHeight+'px'"></textarea></div>
+            <div class="inputctrl"> <textarea rows=1 class="textauto" oninput="this.style.height=this.scrollHeight+'px'"></textarea></div>
             <div class="btnctrl">提交</div>
         </section>
-       
+
     </div>
-   <script>
-       audioM.initAudio({
-        id:"audioTag",
-        progress:"progress",
-        playPause:"playPause",
-        audioTime:"audioTime",
-        playTime:"playTime",
-        progressBg:"progressBg",
-        loading:"loading"
-       })
-   </script>
+    <script>
+        let audioM = new AudioM();
+        audioM.initAudio({
+            id: "audioTag",
+            progress: "progress",
+            playPause: "playPause",
+            audioTime: "audioTime",
+            playTime: "playTime",
+            progressBg: "progressBg",
+            loading: "loading"
+        })
+    </script>
 </body>
+
 </html>

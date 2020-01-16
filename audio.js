@@ -106,16 +106,23 @@ function AudioM() {
         this.playTime.innerText = this.transTime(this.audio.currentTime);
         //每隔两秒统计一次
         let me = this
-        if (!this.timesCount && !this.timeEnd) {
-            this.timesCount = setInterval(() => {
-                if (me.timeEnd) {
-                    clearInterval(me.timesCount)
-                    me.timesCount = null
-                } else {
-                    console.log(me.transTime(me.audio.currentTime))
-                }
+        if (!this.timeEnd && !this.audio.paused) {
+            if (!this.timesCount) {
+                this.timesCount = setInterval(() => {
+                    if (me.timeEnd) {
+                        clearInterval(me.timesCount)
+                        clearInterval(this)
+                        me.timesCount = null
 
-            }, 2000)
+                    }
+
+                    console.log(me.transTime(me.audio.currentTime))
+
+
+                }, 2000)
+            }
+        } else {
+            clearInterval(this.timesCount)
         }
 
 

@@ -119,6 +119,7 @@
         })
         window.onunload = function() {
             if (audioM.audio.paused && audioM.status) {
+                // 播放次数
                 console.log(audioM.transTime(audioM.audio.currentTime))
             }
             debugger

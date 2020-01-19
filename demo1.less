@@ -366,3 +366,59 @@ body{
     padding: .5rem 1rem;
     display: none;
    }
+.P-commentComfirm{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    .comfirm{
+        &Con{
+            width: 80%;
+            position: absolute;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            width: 70%;
+            
+            transform: translate(-50%,-50%);
+            border-radius: 0.5rem; ;
+            box-sizing:border-box ;
+            .title{
+                padding: 8/14rem;
+                text-align: center;
+                border-bottom:1px solid #E3E3E3 ;
+            }
+            .content{
+                padding: 10/14rem;
+                text-align: center;
+            }
+            
+        }
+        &Ctrl{
+            border-top:1px solid #E3E3E3 ;
+            display: flex;
+            text-align: center;
+           
+        }
+        &Cancel{
+            padding: 10/14rem 0;
+            flex: 1;
+            border-right:1px solid #E3E3E3 ;
+        }
+        &Btn{
+            padding: 10/14rem 0;
+            flex: 1;
+            color: #BFC0E5;
+            &.disable{
+                color: #BFC0E5;
+            }
+    
+        }
+
+    }
+    
+
+}

@@ -60,7 +60,7 @@
             </div>
 
         </section>
-        <section class="P-commentMain">
+        <section class="P-commentMain" id="commentContent">
             <div class="titleCom">
                 评论2
             </div>
@@ -102,9 +102,18 @@
         <section class="P-commentCtrl">
             <div class="tipctrl">评论</div>
             <div class="inputctrl"> <textarea rows=1 class="textauto" oninput="this.style.height=this.scrollHeight+'px'"></textarea></div>
-            <div class="btnctrl">提交</div>
+            <div class="btnctrl" id="submit">提交</div>
         </section>
         <div class="P-commentTip" id="tipMsg">tip</div>
+        <div class="P-commentComfirm">
+            <div class="comfirmCon">
+                <div class="comfirmCtrl">
+                    <div class="comfirmCancel"></div>
+                    <div class="comfirmBtn"></div>
+
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         let audioM = new AudioM();
@@ -119,6 +128,7 @@
         })
         window.onunload = function() {
             if (audioM.audio.paused && audioM.status) {
+                // 播放次数
                 console.log(audioM.transTime(audioM.audio.currentTime))
             }
             debugger
@@ -139,6 +149,45 @@
             }, dur || 3000)
 
         }
+        document.getElementById("submit").addEventListener("click", function() {
+            let dom = document.getElementById("commentContent")
+            let innerHTML = ""
+            let data = {
+                num: 2,
+                data: [{
+                    img: "http://image.biaobaiju.com/uploads/20180803/23/1533308846-puvstXHjBc.jpg",
+                    name: "用户",
+                    time: ""
+                }]
+            }
+            innerHTML = '<div class="titleCom">评论' + data.num + '</div></div>'
+            data.data.forEach(d => {
+                innerHTML += `<div class="P-commentList">
+                <div class="P-commentUser">
+                    <div class="userImg">
+                        <img src="${d.img}" />
+
+                    </div>
+                    <div>${d.name}</div>
+                    <div class="timecomment">${d.time}</div>
+                </div>
+                <div class="P-commentContent">评论内容</div>`
+                if (d.reply) {
+                    innerHTML += `<div class="P-commentReply">
+                    <div class="replycomment">回复</div>
+                    <div>
+                        回复内容
+                    </div>
+                </div>`
+                }
+
+                innerHTML += ' </div>'
+            });
+            dom.innerHTML = innerHTML
+
+        }, false)
+
+
         // showTip("sfdsfds")
     </script>
 </body>

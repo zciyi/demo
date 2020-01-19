@@ -395,3 +395,41 @@ body {
   padding: .5rem 1rem;
   display: none;
 }
+.P-commentComfirm {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+}
+.P-commentComfirm .comfirmCon {
+  position: absolute;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  border: radius 0.5rem;
+  padding: 4.28571429rem 2.14285714rem;
+  box-sizing: border-box;
+}
+.P-commentComfirm .comfirmCtrl {
+  border-top: 1px solid #E3E3E3 ;
+  display: flex;
+  justify-content: space-around;
+}
+.P-commentComfirm .comfirmCancel {
+  padding: 1.42857143rem 0;
+  flex: 1;
+  border-right: 1px solid #E3E3E3 ;
+}
+.P-commentComfirm .comfirmBtn {
+  padding: 20rpx 0;
+  flex: 1;
+  color: #BFC0E5;
+}
+.P-commentComfirm .comfirmBtn.disable {
+  color: #BFC0E5;
+}
